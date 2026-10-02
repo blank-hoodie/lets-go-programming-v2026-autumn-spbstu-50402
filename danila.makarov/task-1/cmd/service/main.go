@@ -27,11 +27,6 @@ func main() {
 		return
 	}
 
-	if sign == "/" && num2 == 0 {
-		fmt.Println("Division by zero")
-		return
-	}
-
 	answer := num1
 
 	switch sign {
@@ -42,6 +37,10 @@ func main() {
 	case "*":
 		answer *= num2
 	case "/":
+		if num2 == 0 {
+			fmt.Println("Division by zero")
+			return
+		}
 		answer /= num2
 	default:
 		fmt.Println("Invalid operation")
